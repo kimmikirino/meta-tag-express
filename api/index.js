@@ -5,17 +5,19 @@ const PORT = process.env.PORT || 3001;
 const fs = require('fs');
 
 // static resources should just be served as they are
-app.use(express.static(path.resolve(__dirname, '..', 'public'), { maxAge: '30d' }));
+app.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
 
 app.listen(PORT, error => {
+  console.log("aAAAA");
   if (error) {
     return console.log('Error during app startup', error);
   }
   console.log('listening on ' + PORT + '...');
 });
 
-const indexPath = path.resolve(__dirname, '..', 'public', 'index.html');
+const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
 app.get('/*', (req, res, next) => {
+  console.log("aAAAA");
   fs.readFile(indexPath, 'utf8', (err, htmlData) => {
     if (err) {
       console.error('Error during file reading', err);
@@ -29,7 +31,7 @@ app.get('/*', (req, res, next) => {
 
     // inject meta tags
     htmlData = htmlData
-      .replace('<title>Omella</title>', `<title>aaaa</title>`)
+      .replace('<title>Omella</title>', `<title>AAAAAAAAAAA</title>`)
       .replace('Omella: Payments, forms and signatures, all in one place', 'JAQUELINE');
     // .replace('__META_OG_DESCRIPTION__', post.description)
     // .replace('__META_DESCRIPTION__', post.description)
