@@ -41,3 +41,5 @@ app.get('/*', (req, res, next) => {
     return res.send(htmlData);
   });
 });
+
+module.exports = app;
