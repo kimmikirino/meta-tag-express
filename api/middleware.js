@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const fs = require("fs");
-const path = require('path');
+const path = require("path");
 const indexPath = path.resolve(__dirname, "..", "build", "index.html");
 
 router.get("/", async (req, res) => {
@@ -17,13 +17,12 @@ router.get("/", async (req, res) => {
     // const post = getPostById(postId);
     // if(!post) return res.status(404).send("Post not found");
 
+    const search = "Omella: Payments, forms and signatures, all in one place";
+    const replacer = new RegExp(search, "g");
     // inject meta tags
     htmlData = htmlData
       .replace("<title>Omella</title>", `<title>AAAAAAAAAAA</title>`)
-      .replace(
-        "Omella: Payments, forms and signatures, all in one place",
-        "JAQUELINE"
-      );
+      .replace(replacer, "JAQUELINE");
     // .replace('__META_OG_DESCRIPTION__', post.description)
     // .replace('__META_DESCRIPTION__', post.description)
     // .replace('__META_OG_IMAGE__', post.thumbnail)
