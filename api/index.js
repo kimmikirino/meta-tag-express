@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 // const fs = require('fs');
 const middleware = require("./middleware");
 // static resources should just be served as they are
-app.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
+app.use(express.static(path.resolve(__dirname, '..'), { maxAge: '30d' }));
 
 app.listen(PORT, error => {
   console.log("aAAAA");
