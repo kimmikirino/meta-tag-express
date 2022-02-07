@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const fs = require('fs');
 
 // static resources should just be served as they are
-app.use(express.static(path.resolve(__dirname, '..', 'build'), { maxAge: '30d' }));
+app.use(express.static(path.resolve(__dirname, 'build'), { maxAge: '30d' }));
 
 app.listen(PORT, error => {
   console.log("aAAAA");
@@ -15,7 +15,7 @@ app.listen(PORT, error => {
   console.log('listening on ' + PORT + '...');
 });
 
-const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
+const indexPath = path.resolve(__dirname, 'build', 'index.html');
 app.get('/*', (req, res, next) => {
   console.log("aAAAA");
   fs.readFile(indexPath, 'utf8', (err, htmlData) => {
