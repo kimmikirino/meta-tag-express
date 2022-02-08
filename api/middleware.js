@@ -8,8 +8,10 @@ router.get("/", async (req, res) => {
   console.log("aAAAA");
   console.log(indexPath);
   console.log(__dirname);
-  console.log(process.cwd())
-  
+  console.log(process.cwd());
+  const printDirectoryTree = require("print-directory-tree")(async () => {
+    await printDirectoryTree("./");
+  })();
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
