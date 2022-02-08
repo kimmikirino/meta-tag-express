@@ -25,6 +25,7 @@ const ForkTsCheckerWebpackPlugin =
     ? require("react-dev-utils/ForkTsCheckerWarningWebpackPlugin")
     : require("react-dev-utils/ForkTsCheckerWebpackPlugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 
 const createEnvironmentHash = require("./webpack/persistentCache/createEnvironmentHash");
 
