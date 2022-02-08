@@ -2,17 +2,14 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const indexPath = path.resolve(__dirname, "abc", "index.html");
-const printDirectoryTree = require("print-directory-tree");
+const indexPath = path.resolve(__dirname, "index.html");
 
 router.get("/", async (req, res) => {
   console.log("aAAAA");
   console.log(indexPath);
   console.log(__dirname);
   console.log(process.cwd());
-  (async () => {
-    await printDirectoryTree("./");
-  })();
+
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
