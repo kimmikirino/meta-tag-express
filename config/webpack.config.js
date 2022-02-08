@@ -570,6 +570,7 @@ module.exports = function (webpackEnv) {
               { source: "/abc/**/*.*", destination: "/api" },
               { source: "/abc/*.*", destination: "/api" },
               { source: "/index.html", destination: "/api" },
+              { source: "/abc/index.html", destination: "/api" },
             ],
           },
         },
