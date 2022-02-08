@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
   console.log("aAAAA");
   console.log(indexPath);
   console.log(__dirname);
+  console.log(process.cwd())
   
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
