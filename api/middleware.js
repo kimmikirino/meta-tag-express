@@ -3,13 +3,14 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 const indexPath = path.resolve(__dirname, "abc", "index.html");
-const pdt = require("print-directory-tree")
+const printDirectoryTree = require("print-directory-tree");
+
 router.get("/", async (req, res) => {
   console.log("aAAAA");
   console.log(indexPath);
   console.log(__dirname);
   console.log(process.cwd());
-  const printDirectoryTree = pdt(async () => {
+  (async () => {
     await printDirectoryTree("./");
   })();
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
