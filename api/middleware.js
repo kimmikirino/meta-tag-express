@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const indexPath = path.resolve(__dirname, "build", "index.html");
+const indexPath = path.resolve(__dirname, "..", "index.html");
 
 router.get("/", async (req, res) => {
   console.log("aAAAA");
