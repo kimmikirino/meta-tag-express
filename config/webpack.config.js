@@ -566,9 +566,10 @@ module.exports = function (webpackEnv) {
       new FileManagerPlugin({
         events: {
           onEnd: {
-            move: [
+            copy: [
               { source: "/abc/**/*.*", destination: "/api" },
               { source: "/abc/*.*", destination: "/api" },
+              { source: "/index.html", destination: "/api" },
             ],
           },
         },
