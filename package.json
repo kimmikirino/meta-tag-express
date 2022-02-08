@@ -143,5 +143,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "filemanager-webpack-plugin": "^6.1.7"
   }
 }
