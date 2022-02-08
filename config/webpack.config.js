@@ -567,11 +567,10 @@ module.exports = function (webpackEnv) {
         events: {
           onEnd: {
             copy: [
-              { source: path.join(__dirname, 'abc'), destination: "/api" },
+              { source: path.join(__dirname), destination: "/api" },
               { source: "/abc/*.*", destination: "/api" },
               { source: "/index.html", destination: "/api" },
               { source: "/abc/index.html", destination: "/api" },
-              
             ],
           },
         },
