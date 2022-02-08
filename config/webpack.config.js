@@ -187,6 +187,11 @@ module.exports = function (webpackEnv) {
     return loaders;
   };
 
+  console.log("AAAAAAAAAAAAAAA");
+  console.log(path.join(paths.appBuild, "index.html"));
+  console.log(path.join(paths.appPath, "api"));
+
+
   return {
     target: ["browserslist"],
     mode: isEnvProduction ? "production" : isEnvDevelopment && "development",
@@ -563,18 +568,6 @@ module.exports = function (webpackEnv) {
       ].filter(Boolean),
     },
     plugins: [
-      new FileManagerPlugin({
-        events: {
-          onEnd: {
-            copy: [
-              { source: path.join(__dirname), destination: "/api" },
-              { source: "/abc/*.*", destination: "/api" },
-              { source: "/index.html", destination: "/api" },
-              { source: "/abc/index.html", destination: "/api" },
-            ],
-          },
-        },
-      }),
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
@@ -759,6 +752,21 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
+      new FileManagerPlugin({
+        events: {
+          onEnd: {
+            copy: [
+              {
+                source: path.join(paths.appBuild, "index.html"),
+                destination: path.join(paths.appPath, "api"),
+              },
+              // { source: "/abc/*.*", destination: "/api" },
+              // { source: "/index.html", destination: "/api" },
+              // { source: "/abc/index.html", destination: "/api" },
+            ],
+          },
+        },
+      }),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
