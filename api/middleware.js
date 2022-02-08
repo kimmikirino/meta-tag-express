@@ -6,6 +6,9 @@ const indexPath = path.resolve(__dirname, "abc", "index.html");
 
 router.get("/", async (req, res) => {
   console.log("aAAAA");
+  console.log(indexPath);
+  console.log(__dirname);
+  
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
