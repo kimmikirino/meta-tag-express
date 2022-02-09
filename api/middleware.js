@@ -9,7 +9,6 @@ const indexPath2 = readFileSync(join(__dirname, "index.html"), "utf8");
 
 router.get("/", async (req, res) => {
   console.log("aAAAA");
-  // console.log(indexPath);
   console.log(__dirname);
   console.log(process.cwd());
 
