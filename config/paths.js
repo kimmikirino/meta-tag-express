@@ -50,6 +50,7 @@ const resolveModule = (resolveFn, filePath) => {
   return resolveFn(`${filePath}.js`);
 };
 
+console.log("BBBBBBBBBBBBBBBBBBBBBB");
 console.log(buildPath);
 
 // config after eject: we're in ./config/
