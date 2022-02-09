@@ -3,10 +3,13 @@ const router = express.Router();
 const fs = require("fs");
 const path = require("path");
 const indexPath = path.resolve(__dirname, "..", "index.html");
-
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
+const indexPath2 = resolveApp("abc/index.html");
 router.get("/", async (req, res) => {
   console.log("aAAAA");
   console.log(indexPath);
+  console.log(indexPath2);
   console.log(__dirname);
   console.log(process.cwd());
 
