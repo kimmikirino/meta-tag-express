@@ -2,17 +2,18 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const path = require("path");
-const indexPath = path.resolve(__dirname, "..", "index.html");
-// const appDirectory = fs.realpathSync(process.cwd());
-// const resolveApp = (relativePath) => path.resolve(appDirectory, relativePath);
-// const indexPath2 = resolveApp("abc/index.html");
+// const indexPath = path.resolve(__dirname, "..", "index.html");
+const { readFileSync } = require("fs");
+const { join } = require("path");
+const indexPath2 = readFileSync(join(__dirname, "index.html"), "utf8");
+
 router.get("/", async (req, res) => {
   console.log("aAAAA");
-  console.log(indexPath);
+  // console.log(indexPath);
   console.log(__dirname);
   console.log(process.cwd());
 
-  fs.readFile(indexPath, "utf8", (err, htmlData) => {
+  fs.readFile(indexPath2, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
       return res.status(404).end();
