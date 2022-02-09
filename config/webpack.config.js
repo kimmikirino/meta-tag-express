@@ -187,10 +187,10 @@ module.exports = function (webpackEnv) {
     return loaders;
   };
 
-  // console.log("AAAAAAAAAAAAAAA");
+  console.log("AAAAAAAAAAAAAAA");
+  console.log(paths.appBuild);
   // console.log(path.join(paths.appBuild, "index.html"));
   // console.log(path.join(paths.appPath, "api"));
-
 
   return {
     target: ["browserslist"],
