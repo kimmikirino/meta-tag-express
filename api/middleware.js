@@ -8,20 +8,11 @@ const { join } = require("path");
 const indexPath2 = readFileSync(join(__dirname, "../.output/static/index.html"), "utf8");
 
 router.get("/", async (req, res) => {
-  console.log("aAAAA");
-  console.log(__dirname);
-  console.log(process.cwd());
-
   fs.readFile(indexPath2, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
       return res.status(404).end();
     }
-    // get post info
-    const postId = req.query.id;
-    console.log(postId);
-    // const post = getPostById(postId);
-    // if(!post) return res.status(404).send("Post not found");
 
     const search = "Omella: Payments, forms and signatures, all in one place";
     const replacer = new RegExp(search, "g");
