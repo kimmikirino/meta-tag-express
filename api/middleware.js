@@ -5,7 +5,7 @@ const path = require("path");
 // const indexPath = path.resolve(__dirname, "..", "index.html");
 const { readFileSync } = require("fs");
 const { join } = require("path");
-const indexPath2 = readFileSync(join(__dirname, "index.html"), "utf8");
+const indexPath2 = readFileSync(join(__dirname, "../index.html"), "utf8");
 
 router.get("/", async (req, res) => {
   fs.readFile(indexPath2, "utf8", (err, htmlData) => {
