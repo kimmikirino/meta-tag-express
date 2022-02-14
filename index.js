@@ -1,28 +1,28 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 const PORT = process.env.PORT || 8080;
-const fs = require('fs');
+const fs = require("fs");
 // const middleware = require("./api/middleware");
 // static resources should just be served as they are
-app.use(express.static(path.resolve(__dirname), { maxAge: '30d' }));
+app.use(express.static(path.resolve(__dirname), { maxAge: "30d" }));
 
-app.listen(PORT, error => {
+app.listen(PORT, (error) => {
   console.log("aAAAA");
   if (error) {
-    return console.log('Error during app startup', error);
+    return console.log("Error during app startup", error);
   }
-  console.log('listening on ' + PORT + '...');
+  console.log("listening on " + PORT + "...");
 });
 
 // app.use("/api", middleware);
 
-const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
-app.get('/*', (req, res, next) => {
+const indexPath = path.resolve(__dirname, "index.html");
+app.get("/*", (req, res, next) => {
   console.log("aAAAA");
-  fs.readFile(indexPath, 'utf8', (err, htmlData) => {
+  fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
-      console.error('Error during file reading', err);
+      console.error("Error during file reading", err);
       return res.status(404).end();
     }
     // get post info
@@ -33,8 +33,11 @@ app.get('/*', (req, res, next) => {
 
     // inject meta tags
     htmlData = htmlData
-      .replace('<title>Omella</title>', `<title>AAAAAAAAAAA</title>`)
-      .replace('Omella: Payments, forms and signatures, all in one place', 'JAQUELINE');
+      .replace("<title>Omella</title>", `<title>AAAAAAAAAAA</title>`)
+      .replace(
+        "Omella: Payments, forms and signatures, all in one place",
+        "JAQUELINE"
+      );
     // .replace('__META_OG_DESCRIPTION__', post.description)
     // .replace('__META_DESCRIPTION__', post.description)
     // .replace('__META_OG_IMAGE__', post.thumbnail)
