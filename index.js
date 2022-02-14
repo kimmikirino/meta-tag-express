@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 8080;
 const fs = require("fs");
 // const middleware = require("./api/middleware");
 // static resources should just be served as they are
-app.use(express.static(path.resolve('/vercel/path2/build'), { maxAge: "30d" }));
+app.use(express.static(path.resolve("/vercel/path2/build"), { maxAge: "30d" }));
 
 app.listen(PORT, (error) => {
   console.log("aAAAA");
@@ -20,6 +20,7 @@ app.listen(PORT, (error) => {
 const indexPath = path.resolve("/vercel/path2/build/index.html");
 app.get("/*", (req, res, next) => {
   console.log("aAAAA");
+  console.log(process.cwd());
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
