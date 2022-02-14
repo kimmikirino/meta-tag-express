@@ -9,5 +9,10 @@
       "src": "package.json",
       "use": "@vercel/static-build"
     }
-  ]
+  ],
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "build/**"
+    }
+  }
 }
