@@ -3,6 +3,9 @@
   "functions": {
     "api/index.js": {
       "includeFiles": "build/**"
+    },
+    "api/middleware.js": {
+      "includeFiles": "build/**"
     }
   }
 }
