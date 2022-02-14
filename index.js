@@ -13,9 +13,9 @@ fs.readdir(__dirname, (err, files) => {
   });
 });
 
-// const { readFileSync } = require("fs");
-// const { join } = require("path");
-// const indexPath2 = readFileSync(join(__dirname, "/index.html"), "utf8");
+const { readFile } = require("fs");
+const { join } = require("path");
+const indexPath2 = readFile(join(__dirname, "/index.html"), "utf8");
 
 app.listen(PORT, (error) => {
   console.log("aAAAA");
@@ -29,9 +29,9 @@ app.listen(PORT, (error) => {
 
 // const indexPath = path.resolve("/vercel/path2/build/index.html");
 app.get("/api", (req, res, next) => {
-  console.log("aAAAA");
+  console.log("BBBBBbbbb");
   console.log(process.cwd());
-  fs.readFile(indexPath, "utf8", (err, htmlData) => {
+  fs.readFile(indexPath2, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
       return res.status(404).end();
