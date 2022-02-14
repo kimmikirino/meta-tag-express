@@ -6,16 +6,16 @@ const fs = require("fs");
 // const middleware = require("./api/middleware");
 // static resources should just be served as they are
 app.use(express.static(path.resolve("."), { maxAge: "30d" }));
-
+const indexPath = path.resolve(__dirname);
 fs.readdir(__dirname, (err, files) => {
   files.forEach(file => {
     console.log(file);
   });
 });
 
-const { readFileSync } = require("fs");
-const { join } = require("path");
-const indexPath2 = readFileSync(join(__dirname, "/index.html"), "utf8");
+// const { readFileSync } = require("fs");
+// const { join } = require("path");
+// const indexPath2 = readFileSync(join(__dirname, "/index.html"), "utf8");
 
 app.listen(PORT, (error) => {
   console.log("aAAAA");
@@ -31,7 +31,7 @@ app.listen(PORT, (error) => {
 app.get("/api", (req, res, next) => {
   console.log("aAAAA");
   console.log(process.cwd());
-  fs.readFile(indexPath2, "utf8", (err, htmlData) => {
+  fs.readFile(indexPath, "utf8", (err, htmlData) => {
     if (err) {
       console.error("Error during file reading", err);
       return res.status(404).end();
