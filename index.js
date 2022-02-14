@@ -7,14 +7,16 @@ const fs = require("fs");
 // static resources should just be served as they are
 app.use(express.static(path.resolve("."), { maxAge: "30d" }));
 
-const { readFileSync } = require("fs");
-const { join } = require("path");
-const indexPath2 = readFileSync(join(__dirname, "index.html"), "utf8");
-fs.readdir('./', (err, files) => {
+fs.readdir(__dirname, (err, files) => {
   files.forEach(file => {
     console.log(file);
   });
 });
+
+const { readFileSync } = require("fs");
+const { join } = require("path");
+const indexPath2 = readFileSync(join(__dirname, "/index.html"), "utf8");
+
 app.listen(PORT, (error) => {
   console.log("aAAAA");
   if (error) {
