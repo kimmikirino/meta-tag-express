@@ -17,7 +17,7 @@ app.listen(PORT, (error) => {
 
 // app.use("/api", middleware);
 
-const indexPath = path.resolve("/vercel/path2/index.html");
+const indexPath = path.resolve("/vercel/path2/build/index.html");
 app.get("/*", (req, res, next) => {
   console.log("aAAAA");
   fs.readFile(indexPath, "utf8", (err, htmlData) => {
