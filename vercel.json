@@ -8,7 +8,7 @@
       "config": { "distDir": "build" }
     },
     {
-      "src": "index.js",
+      "src": "public/index.js",
       "use": "@vercel/node"
     }
   ],
