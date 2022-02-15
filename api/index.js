@@ -7,7 +7,7 @@ const middleware = require("./middleware");
 // static resources should just be served as they are
 app.use(express.static(path.resolve("."), { maxAge: "30d" }));
 
-app.use("/api", middleware);
+app.use("/api2", middleware);
 
 // const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
 // app.get('/*', (req, res, next) => {
