@@ -111,9 +111,9 @@ checkBrowsers(paths.appPath, isInteractive)
 
       console.log(paths)
 
-      fs.copySync(paths.appBuild, paths.api, {
-        dereference: true,
-      });
+      // fs.copySync(paths.appBuild, paths.api, {
+      //   dereference: true,
+      // });
     },
     (err) => {
       const tscCompileOnError = process.env.TSC_COMPILE_ON_ERROR === "true";
