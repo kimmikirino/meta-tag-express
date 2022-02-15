@@ -3,11 +3,11 @@ const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 // const fs = require('fs');
-const middleware = require("./middleware");
+// const middleware = require("./middleware");
 // static resources should just be served as they are
 app.use(express.static(path.resolve("."), { maxAge: "30d" }));
 
-app.use("/api2", middleware);
+// app.use("/api2", middleware);
 
 // const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
 // app.get('/*', (req, res, next) => {
@@ -37,7 +37,7 @@ app.use("/api2", middleware);
 // });
 
 app.listen(PORT, (error) => {
-  console.log("aAAAA");
+  console.log("YEY");
   if (error) {
     return console.log("Error during app startup", error);
   }
