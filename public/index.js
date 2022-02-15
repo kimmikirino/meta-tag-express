@@ -36,9 +36,10 @@ app.get("/api", (req, res, next) => {
     const search = "Omella: Payments, forms and signatures, all in one place";
     const replacer = new RegExp(search, "g");
     // inject meta tags
+    const randomNum = Math.random();
     htmlData = htmlData
-      .replace("<title>Omella</title>", `<title>AAAAAAAAAAA</title>`)
-      .replace(replacer, "JAQUELINE");
+      .replace("<title>Omella</title>", `<title>${randomNum}</title>`)
+      .replace(replacer, `${randomNum} - Jaqueline`);
     // .replace('__META_OG_DESCRIPTION__', post.description)
     // .replace('__META_DESCRIPTION__', post.description)
     // .replace('__META_OG_IMAGE__', post.thumbnail)
